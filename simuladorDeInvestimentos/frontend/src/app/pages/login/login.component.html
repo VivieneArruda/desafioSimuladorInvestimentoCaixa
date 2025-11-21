@@ -4,16 +4,22 @@
 
     <form [formGroup]="form" (ngSubmit)="login()">
       <label>Email</label>
-      <input type="email" formControlName="email" placeholder="Digite seu email" />
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Digite seu email"
+      />
 
       <label>Senha</label>
-      <input type="password" formControlName="senha" placeholder="Digite sua senha" />
+      <input
+        type="password"
+        formControlName="senha"
+        placeholder="Digite sua senha"
+      />
 
       <button type="submit" [disabled]="loading">Entrar</button>
 
       <p class="erro" *ngIf="errorMessage">{{ errorMessage }}</p>
     </form>
   </div>
-
- 
 </div>

@@ -8,9 +8,8 @@ describe('LibrasButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LibrasButtonComponent]
-    })
-    .compileComponents();
+      imports: [LibrasButtonComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LibrasButtonComponent);
     component = fixture.componentInstance;

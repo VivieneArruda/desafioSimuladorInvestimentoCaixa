@@ -8,10 +8,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   loading = false;
   errorMessage = '';
 
@@ -19,20 +18,17 @@ export class LoginComponent implements OnInit {
 
   // Usuário fake para testes
   usuarioFake = {
-    email: "cliente@exemplo.com",
-    senha: "123456",
-    id: 123
+    email: 'cliente@exemplo.com',
+    senha: '123456',
+    id: 123,
   };
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router
-  ) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', Validators.required]
+      senha: ['', Validators.required],
     });
   }
 

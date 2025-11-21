@@ -1,13 +1,13 @@
-$azul-caixa: #005CA9;
-$laranja-caixa: #D87B00;
+$azul-caixa: #005ca9;
+$laranja-caixa: #d87b00;
 
 .login-container {
   display: flex;
   flex-direction: column;
   justify-content: center; /* centraliza verticalmente */
-  align-items: center;     /* centraliza horizontalmente */
-  min-height: 100vh;       /* ocupa toda a altura da tela */
-  padding: 16px;           /* padding lateral */
+  align-items: center; /* centraliza horizontalmente */
+  min-height: 100vh; /* ocupa toda a altura da tela */
+  padding: 16px; /* padding lateral */
 }
 
 .login-card {
