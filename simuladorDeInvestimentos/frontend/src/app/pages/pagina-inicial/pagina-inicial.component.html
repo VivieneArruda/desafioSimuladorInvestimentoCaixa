@@ -1,0 +1,39 @@
+<div class="pagina-inicial-container">
+  <!-- Conteúdo principal -->
+  <div class="conteudo-principal">
+    <!-- Título principal -->
+    <h1 class="titulo-principal">
+      Acesse a Área do Investidor para simular seu investimento.
+    </h1>
+
+    <!-- Texto login -->
+    <p class="texto-login">
+      Para quem está começando ou já investe, temos tudo para você.
+    </p>
+
+    <!-- Lista de cards -->
+    <div class="cards-tipos">
+      <mat-card class="tipo-card" *ngFor="let card of cards">
+        <mat-card-title>{{ card.titulo }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ card.resumo }}</p>
+        </mat-card-content>
+        <div class="card-actions">
+          <button (click)="abrirPopup(card.tipo)">Saiba mais</button>
+          <a *ngIf="card.link" [href]="card.link" target="_blank"
+            >Ir para site</a
+          >
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" *ngIf="popupAberto">
+    <div class="popup-conteudo">
+      <button class="fechar" (click)="fecharPopup()">X</button>
+      <h2>{{ popupTitulo }}</h2>
+      <p>{{ popupDescricao }}</p>
+    </div>
+  </div>
+</div>

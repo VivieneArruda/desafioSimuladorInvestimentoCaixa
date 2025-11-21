@@ -1,0 +1,58 @@
+git config --global user.email "viviene.arruda@hotmail.com"
+<h1 class="titulo-principal">
+  Rafael, seu perfil de investidor é: <strong>{{ perfil }}</strong>
+</h1>
+
+<div class="cards-tipos">
+  <mat-card
+    *ngFor="let p of produtos"
+    class="tipo-card"
+    (click)="abrirPopup(p)"
+  >
+    <mat-card-title>{{ p.nome }}</mat-card-title>
+    <mat-card-content>
+      <p>{{ p.descricao }}</p>
+      <p><strong>Risco:</strong> {{ p.risco }}</p>
+    </mat-card-content>
+
+    <button mat-button color="primary">Saiba mais</button>
+  </mat-card>
+</div>
+
+<div class="graficos-container">
+  <mat-card class="grafico-card">
+    <mat-card-title>Simulação de Retorno (Linha)</mat-card-title>
+    <mat-card-content>
+      <div class="grafico-wrapper">
+        <canvas
+          baseChart
+          [data]="chartDataLinha"
+          [options]="chartOptions"
+          type="line"
+        >
+        </canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="grafico-card">
+    <mat-card-title>Simulação de Retorno (Barras)</mat-card-title>
+    <mat-card-content>
+      <div class="grafico-wrapper">
+        <canvas
+          baseChart
+          [data]="chartDataBarra"
+          [options]="chartOptions"
+          type="bar"
+        >
+        </canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="btn-contato-container">
+  <button mat-raised-button color="primary" (click)="solicitarContato()">
+    Solicitar contato de um gerente especialista em investimentos
+  </button>
+</div>

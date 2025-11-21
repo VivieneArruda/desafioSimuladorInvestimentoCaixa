@@ -1,0 +1,86 @@
+<div class="page-container">
+  <div class="form-container">
+    <h2>Falar com um Especialista em Investimentos</h2>
+    <form (ngSubmit)="enviarFormulario()" #contatoForm="ngForm">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nome completo</mat-label>
+        <input matInput [(ngModel)]="nome" name="nome" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>E-mail</mat-label>
+        <input
+          matInput
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Telefone</mat-label>
+        <input
+          matInput
+          type="tel"
+          [(ngModel)]="telefone"
+          name="telefone"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Valor para investir</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="patrimonioFormatado"
+          (input)="onPatrimonioInput($event)"
+          name="patrimonio"
+          required
+        />
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="aceitaContato" name="aceitaContato" required>
+        Eu concordo em receber comunicações.<br />
+        Ao informar meus dados, eu concordo com a
+        <a href="#" target="_blank">Política de Privacidade</a>.
+      </mat-checkbox>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!contatoForm.form.valid"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- POPUP ESTILO INFORMAÇÃO VERDE -->
+<ng-template [ngIf]="popupAberto">
+  <div class="popup-backdrop">
+    <div class="popup-info">
+      <button class="popup-close" (click)="fecharPopup()">✕</button>
+      <div class="popup-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="12" fill="#127527" />
+          <path
+            d="M6 12l5 5 7-9"
+            stroke="white"
+            stroke-width="3"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="popup-text">
+        <strong>Cadastro realizado com sucesso!</strong>
+        <p>Em breve nossos gerentes vão entrar em contato.</p>
+      </div>
+    </div>
+  </div>
+</ng-template>

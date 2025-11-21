@@ -1,0 +1,65 @@
+.footer {
+  width: 100%;
+  background-color: #005ca9;
+  color: #fff;
+  font-weight: 400;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center; /* centraliza o conteúdo */
+  align-items: center;
+  min-height: 56px; /* altura mínima */
+  box-sizing: border-box;
+
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap; /* permite quebra de linha em telas pequenas */
+    gap: 10px;
+  }
+
+  .footer-text {
+    font-size: 16px;
+    text-align: center;
+    flex: 1 1 300px; /* cresce e encolhe conforme o espaço */
+    min-width: 200px;
+    padding: 16px 0 12px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 10px;
+    flex: 0 1 auto; /* mantém os ícones juntos */
+  }
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+/* Tablets e telas médias */
+@media (max-width: 800px) {
+  .footer-text {
+    font-size: 13px;
+  }
+  .footer-icons a {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Pequenos celulares */
+@media (max-width: 450px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+  .footer-text {
+    font-size: 12px;
+  }
+}
